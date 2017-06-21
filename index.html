@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="libraries/d3.v3.min.js"></script>
+    <script src="libraries/topojson.v0.js"></script>
+    <script src="data/unqualified.js"></script>
+    <script src="data/boundaries.js"></script>
+    <script src="choropleth.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="colorbrewer.css" />
+</head>
+<body>
+    <div id="infoBox" style="opacity: 1;">
+        <p id="toolName" class="inLabel"></p>
+        <p id="toolVal" class="inLabel"></p>
+        <p id="someA" class="inLabel"></p>
+    </div>
+    <div id="tooltip" style="opacity: 0;">
+        <p id="toolName" class="inLabel"></p>
+        <p id="toolVal" class="inLabel"></p>
+        <p id="someA" class="inLabel"></p>
+    </div>
+
+    <script type="text/javascript">
+        var body = d3.select("body");
+        ts.choropleth.draw(body);
+    </script>
+</body>
+</html>
