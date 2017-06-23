@@ -1,6 +1,8 @@
 (function() {
   'use strict';
 
+
+
   angular
     .module('angularVersion')
     .controller('MainController', MainController);
@@ -9,70 +11,249 @@
   function MainController($timeout, webDevTec, toastr, $scope) {
     var vm = this;
 
-    vm.awesomeThings = [];
-    vm.classAnimation = '';
-    vm.creationDate = 1498074803649;
-    vm.showToastr = showToastr;
-
-    activate();
-
-    function activate() {
-      getWebDevTec();
-      $timeout(function() {
-        vm.classAnimation = 'rubberBand';
-      }, 4000);
-    }
-
-    function showToastr() {
-      toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
-      vm.classAnimation = '';
-    }
-
-    function getWebDevTec() {
-      vm.awesomeThings = webDevTec.getTec();
-
-      angular.forEach(vm.awesomeThings, function(awesomeThing) {
-        awesomeThing.rank = Math.random();
-      });
-    }
-
-    $scope.items = unqualified.data
     console.log($scope.items)
 
-    $scope.hitMap = function (d, i) {
-        $(".q1-9[d='M602.1972255452116,581.7223297975625L602.2589771123477,581.7205158560828L604.5234986984847,583.0412142601326L605.9488559797582,585.1957819721638L607.6175303016026,585.1449803404248L607.9108612481664,586.6395234758074L609.5873021562372,586.8190290355633L609.9798914100993,587.500752087908L612.3296893844865,587.4267881590504L612.8869942563562,589.3752947040603L613.7060611163981,589.8117523096917L613.2451590338281,592.8337093299533L615.5116519587755,593.9173425735125L615.5097219321453,595.7680200348696L614.4712811973025,596.264245353349L613.3602871108549,598.3817811679264L612.99982309654,600.7064905971947L614.3348358103622,599.7385029035804L617.1725039845744,599.1836624186908L616.8344837361062,600.2357242878179L618.7956443164804,601.3277165354584L621.2187540874481,599.511541838393L622.5712627866369,599.118606676645L624.2729289664851,603.4556986305697L625.5385210152641,604.1058859203968L625.8553012482787,606.0612820442211L625.0457520054019,607.8244858256594L624.0554994370211,607.9743424504732L623.3770241001373,609.9640116459113L623.9100997673854,610.9867621128506L627.1856128902202,610.2946208548065L628.6942178482185,610.7040471961182L628.781009279681,611.3950132713926L632.1896564786264,612.6607410440001L632.6326382210361,611.1408181167199L634.4940087546213,610.9569247400495L635.0194780201002,610.0120712797388L633.8834112505053,609.5912370977621L633.5217606206422,608.2163538375444L634.3875246934185,608.0688430629516L633.270512845225,604.7551741482257L635.1782516671119,604.2221272389916L636.8054518568565,604.508502277462L637.531922151102,605.6380508898155L638.5570840399683,604.7895400014586L639.8121911505248,605.08884747703L641.5107916089898,603.9824341549174L644.021211564793,604.5789003694008L643.937755814878,605.6233878107705L645.727021714003,606.8255304315053L644.2722877736906,607.8083969103727L645.2864023042173,609.8509388990396L645.3016842492191,611.8170923151883L645.2394860253224,611.8195450340509L644.9997874974716,612.0603708161934L644.9375856632032,612.0628190546922L644.3188745964715,610.5831453424917L642.6489722170021,610.879680347176L640.4589589817908,612.2366662487075L641.6632414591534,614.3884502339506L639.0395972044414,615.8769808056813L638.1000323450239,617.4163760746842L638.0943035919801,618.9204704096192L637.093118391475,618.8423714769087L637.4289203332899,621.1434326676099L636.5432875023156,620.8294893385346L634.8277825452257,621.7028320536756L633.7319485675862,624.1723105721958L634.195178713479,626.5845794973848L633.3213322894318,626.6165256591576L632.7474819932643,628.0255194468045L634.6006301128477,629.1146093529969L634.6006301128477,629.1146093529969L632.3942855989851,632.0869643501564L631.940082278798,635.1109065734627L629.2874849465333,636.2467459101172L628.8128457123934,635.222490618009L627.1120049404534,634.9351955369748L624.5508618615486,633.2888164808301L623.370899400047,633.5604728622211L621.8114282607933,635.5795515099135L619.163661052775,636.9400840598637L615.7698966657127,636.5880998657085L615.634219410044,638.211684607304L614.5959925835732,639.0545469019435L614.083965575174,640.6900453163998L612.3159139728804,640.2832326093139L611.2677670905341,642.8603541930324L610.2616560672733,642.7758619469341L607.2749041694512,641.4791495441332L605.5381988615643,642.1094068736265L604.6167687179449,640.6332793991432L603.3608682079088,640.55453255262L601.7978060621248,638.5183001185396L600.7204657419104,638.0866895276222L599.4592367109121,635.5784096276802L598.806993955254,636.868937770887L596.4644167122852,638.2063685864086L594.5211152907575,640.4567629628882L592.0879977574182,640.8690114999381L590.6828623729841,639.8653562513682L589.4422013224013,637.9318851565149L589.5043229024049,635.5018784175545L587.7504383976234,633.0030673149686L589.3397502854272,631.5744511830289L589.9073243941721,629.362531830996L591.1823031810012,627.9413590359809L590.2336254002206,627.5037633536795L589.6678593675346,624.9744800887129L588.0337417025931,624.5542339704407L587.7575258031333,623.520576710679L589.3400885504577,621.9763848178545L589.2618915849426,618.9717783520846L594.6033608943594,615.9382548441781L593.4451771513174,614.5820097022379L593.3951623271764,612.7330613726253L593.9827051930976,611.4450384222273L590.0766569860759,612.0120233588523L589.2880396617956,610.4136861253783L587.9022711669536,609.7557637162527L587.3486322854732,607.572829926019L585.3515688789741,607.2766413969466L583.9674627880328,606.6174165036637L582.2703595432596,603.3057606639368L582.8034344109388,602.2519574369762L581.8388017782347,600.8879224691318L581.8444328288698,601.1190585805725L583.1236972920804,597.6185684315087L584.425429568039,597.5862267631346L585.2911020419374,595.0204307335625L586.0905616010605,594.768908994004L584.2652653886179,593.6585166095874L586.4297995950798,591.0597869147887L588.191614668335,589.7423948991718L589.6187383518406,587.5079051999983L591.575858464264,586.6464491204633L593.0492941002024,583.9468856091671L595.9241752309212,582.8269998867427L597.7154357026895,582.7767231953794L598.6098051036987,583.7921771189312Z']").d3Click();
-    },
+      angular.element(document).ready(function () {
 
-    vm.status = {
-      isopen: false
-    };
+        var countyListGet = {
+          "data": {
+            "Surrey": [
+              {
+                "username": "2048637",
+                "profession": "nurse",
+                "customer_group": "tesco"
+              },
+              {
+                "username": "2046351",
+                "profession": "pharmacist",
+                "customer_group": "asda"
+              }
+            ],
+            "East Sussex": [
+              {
+                "username": "2046389",
+                "profession": "nurse",
+                "customer_group": "morrisons"
+              },
+              {
+                "username": "2046383",
+                "profession": "pharmacist",
+                "customer_group": "asda"
+              }
+            ]
+          }
+        }
 
-    vm.toggled = function(open) {
-      $log.log('Dropdown is now: ', open);
-    };
-
-    vm.toggleDropdown = function($event) {
-      $event.preventDefault();
-      $event.stopPropagation();
-      $scope.status.isopen = !$scope.status.isopen;
-    };
-
-    vm.appendToEl = angular.element(document.querySelector('#dropdown-long-content'));
-
-    angular.element(document).ready(function () {
-      var body = d3.select("body");
-      ts.choropleth.draw(body);
+        var countyListShow = countyListGet.data
+        console.log(countyListShow)
+        console.log(gBData)
 
 
-      jQuery.fn.d3Click = function () {
-        this.each(function (i, e) {
-          var evt = new MouseEvent("click");
-          e.dispatchEvent(evt);
-        });
-      };
+      	// Base path to maps
+      	var baseMapPath = "http://code.highcharts.com/mapdata/",
+      		showDataLabels = false, // Switch for data labels enabled/disabled
+      		mapCount = 0,
+      		searchText,
+      		mapOptions = '';
 
-      
+          // Populate dropdown menus and turn into jQuery UI widgets
+        	$.each(gBData.features, function (mapGroup, maps) {
+        		if (mapGroup !== "version") {
+        			mapOptions += '<option class="option-header">' + mapGroup + '</option>';
+        			$.each(maps, function (desc, path) {
+        	            mapOptions += '<option value="' + path + '">' + desc + '</option>';
+        	            mapCount++;
+        			});
+        		}
+        	});
 
-    });
+
+      	searchText = 'Choose county';
+      	mapOptions = '<option value="countries/gb/gb-all.js">' + searchText + '</option>' + mapOptions;
+      	$("#mapDropdown").append(mapOptions).combobox();
+
+      	// Change map when item selected in dropdown
+      	$("#mapDropdown").change(function () {
+      		var $selectedItem = $("option:selected", this),
+      			mapDesc = $selectedItem.text(),
+      			mapKey = this.value.slice(0, -3),
+      			svgPath = baseMapPath + mapKey + '.svg',
+      			geojsonPath = baseMapPath + mapKey + '.geo.json',
+      			javascriptPath = baseMapPath + this.value,
+      			isHeader = $selectedItem.hasClass('option-header');
+
+            console.log($selectedItem)
+
+      		// Dim or highlight search box
+      		if (mapDesc === searchText || isHeader) {
+      			$('.custom-combobox-input').removeClass('valid');
+      			location.hash = '';
+      		} else {
+      			$('.custom-combobox-input').addClass('valid');
+      			location.hash = mapKey;
+      		}
+
+      		if (isHeader) {
+      			return false;
+      		}
+
+              // Show loading
+              if ($("#container").highcharts()) {
+              	$("#container").highcharts().showLoading('<i class="fa fa-spinner fa-spin fa-2x"></i>');
+              }
+
+
+              // When the map is loaded or ready from cache...
+              function mapReady () {
+
+      			var mapGeoJSON = Highcharts.maps[mapKey],
+      				data = [],
+      				parent,
+      				match;
+
+      			// Update info box download links
+      			$("#download").html('<a class="button" target="_blank" href="http://www.highcharts.com/samples/maps-base.php?mapkey=' + mapKey + '">' +
+      				'View clean demo</a>' +
+      				'<div class="or-view-as">... or view as ' +
+      				'<a target="_blank" href="' + svgPath + '">SVG</a>, ' +
+      				'<a target="_blank" href="' + geojsonPath + '">GeoJSON</a>, ' +
+      				'<a target="_blank" href="' + javascriptPath + '">JavaScript</a>.</div>');
+
+      			// Generate non-random data for the map
+      			$.each(mapGeoJSON.features, function (index, feature) {
+      				data.push({
+      					key: feature.properties['hc-key'],
+      					value: index
+      				});
+      			});
+
+      			// Show arrows the first time a real map is shown
+      			if (mapDesc !== searchText) {
+      				$('.selector .prev-next').show();
+      				$('#sideBox').show();
+      			}
+
+
+      			// Is there a layer above this?
+      			if (/^countries\/[a-z]{2}\/[a-z]{2}-all$/.test(mapKey)) { // country
+      				parent = {
+      					desc: 'World',
+      					key: 'custom/world'
+      				};
+      			} else if (match = mapKey.match(/^(countries\/[a-z]{2}\/[a-z]{2})-[a-z0-9]+-all$/)) { // admin1
+      				parent = {
+      					desc: $('option[value="' + match[1] + '-all.js"]').text(),
+      					key: match[1] + '-all'
+      				};
+      			}
+      			$('#up').html('');
+      			if (parent) {
+      				$('#up').append(
+      					$('<a><i class="fa fa-angle-up"></i> ' + parent.desc + '</a>')
+      					.attr({
+      						title: parent.key
+      					})
+      					.click(function () {
+      						$('#mapDropdown').val(parent.key + '.js').change();
+      					})
+      				);
+      			}
+
+
+      			// Instantiate chart
+      			$("#container").highcharts('Map', {
+
+      				title: {
+      					text: null
+      				},
+
+      				mapNavigation: {
+      					enabled: true
+      				},
+
+      				colorAxis: {
+      					min: 0,
+      					stops: [
+      						[0, '#EFEFFF'],
+      						[0.5, Highcharts.getOptions().colors[0]],
+      						[1, Highcharts.Color(Highcharts.getOptions().colors[0]).brighten(-0.5).get()]
+      					]
+      				},
+
+      				legend: {
+      					layout: 'vertical',
+      					align: 'left',
+      					verticalAlign: 'bottom'
+      				},
+
+      				series: [{
+      					data: data,
+      					mapData: mapGeoJSON,
+      					joinBy: ['hc-key', 'key'],
+      					name: 'Random data',
+      					states: {
+      						hover: {
+      							color: Highcharts.getOptions().colors[2]
+      						}
+      					},
+      					dataLabels: {
+      						enabled: showDataLabels,
+      						formatter: function () {
+      							return mapKey === 'custom/world' || mapKey === 'countries/us/us-all' ?
+      								(this.point.properties && this.point.properties['hc-a2']) :
+      								this.point.name;
+      						}
+      					},
+      					point: {
+      						events: {
+      							// On click, look for a detailed map
+      							click: function () {
+      								var key = this.key;
+      								$('#mapDropdown option').each(function (i) {
+      									if (this.value === 'countries/' + key.substr(0, 2) + '/' + key + '-all.js') {
+      										$('#mapDropdown').val(this.value).change();
+      									}
+      								});
+      							}
+      						}
+      					}
+      				}, {
+      					type: 'mapline',
+      					name: "Separators",
+      					data: Highcharts.geojson(mapGeoJSON, 'mapline'),
+      					nullColor: 'gray',
+      					showInLegend: false,
+      					enableMouseTracking: true
+      				}]
+      			});
+
+      			showDataLabels = $("#chkDataLabels").attr('checked');
+
+      		}
+
+      		// Check whether the map is already loaded, else load it and
+      		// then show it async
+      		if (Highcharts.maps[mapKey]) {
+      			mapReady();
+      		} else {
+      			$.getScript(javascriptPath, mapReady);
+      		}
+      	});
+
+      	// Toggle data labels - Note: Reloads map with new random data
+      	$("#chkDataLabels").change(function () {
+      		showDataLabels = $("#chkDataLabels").attr('checked');
+      		$("#mapDropdown").change();
+      	});
+
+      	// Trigger change event to load map on startup
+      	if (location.hash) {
+      		$('#mapDropdown').val(location.hash.substr(1) + '.js');
+      	} else { // for IE9
+      		$($('#mapDropdown option')[0]).attr('selected', 'selected');
+      	}
+      	$('#mapDropdown').change();
+
+      });
   }
 })();
